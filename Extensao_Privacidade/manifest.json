@@ -1,0 +1,33 @@
+{
+
+    "manifest_version": 2,
+    "name": "Security and Privacy Detector",
+    "version": "1.0",
+  
+    "description": "Security and Privacy Detector",
+  
+    "icons": {
+      "48": "src/img/cookie.png"
+    },
+
+    "browser_action": {
+        "default_icon": "src/img/cookie.png",
+        "default_title": "Security and Privacy Detector",
+        "default_popup": "src/popup.html"
+    },
+
+    "permissions": [
+        "tabs",
+        "cookies",
+        "<all_urls>",
+        "storage"
+    ],
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["src/background.js"]
+      }
+    ]
+  
+  }
